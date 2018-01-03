@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="lightbox.css">
-     <style>
+    <style>
         * {
             margin: 0;
-            padding:0;
+            padding: 0;
             box-sizing: border-box;
             font-family: 'Raleway', sans-serif;
         }
-  
+
         .one {
             position: fixed;
-            width:100%;
-            min-height:81px;
-            position:relative;
-          background-image: linear-gradient(to right, #000, #9cff);
+            width: 100%;
+            min-height: 81px;
+            position: relative;
+            background-image: linear-gradient(to right, #000, #9cff);
         }
-       nav {
-           position:fixed;
-           z-index:2;
-/*            background-color: black;*/
-            min-height:81px;
+
+        nav {
+            position: fixed;
+            z-index: 2;
+            /*            background-color: black;*/
+            min-height: 81px;
             display: flex;
             justify-content: flex-end;
-           align-items: center;
-           top: 0;
-           right:0;
-           left:0;
-        
+            align-items: center;
+            top: 0;
+            right: 0;
+            left: 0;
+
         }
+
         .one img {
-        position: absolute;
+            position: absolute;
             position: fixed;
-        height:81px;
-            width:180px;
-        left: 20%;
-        z-index:3;
+            height: 81px;
+            width: 180px;
+            left: 20%;
+            z-index: 3;
             display: none;
         }
-        
+
         nav a {
             color: white;
             font-family: 'Raleway', sans-serif;
             flex-basis: 13%;
-            font-size:20px;
+            font-size: 20px;
             text-align: center;
             text-decoration: none;
             padding: 5px;
             position: relative;
-            z-index:1;
+            z-index: 1;
         }
-        
+
         .one nav a:nth-child(4) {
             border: 2px solid white;
-            margin-right:50px;
+            margin-right: 50px;
         }
-     
-       .one nav a:nth-child(1)::before{
+
+        .one nav a:nth-child(1)::before {
             content: "";
             display: block;
             width: 100%;
             height: 0;
             position: absolute;
             bottom: 0;
-            right:0;
+            right: 0;
             background-color: lightblue;
             transition: .5s;
             z-index: -1;
         }
+
         .one nav a:nth-child(1):hover::before {
             height: 100%;
         }
@@ -84,14 +88,16 @@
             height: 0;
             position: absolute;
             top: 0;
-            right:0;
+            right: 0;
             background-color: lightblue;
             transition: .5s;
             z-index: -1;
         }
+
         .one nav a:nth-child(2):hover::after {
-         height: 100%;
+            height: 100%;
         }
+
         .one nav a:nth-child(3)::before {
             content: "";
             display: block;
@@ -99,325 +105,336 @@
             height: 0;
             position: absolute;
             bottom: 0;
-            right:0;
+            right: 0;
             background-color: lightblue;
             transition: .5s;
             z-index: -1;
         }
+
         .one nav a:nth-child(3):hover::before {
-         height: 100%;
+            height: 100%;
         }
+
         .one nav a:nth-child(4):hover {
-      color: black;
+            color: black;
             background-color: white;
-            
+
         }
-        
+
         .one .moon {
             position: absolute;
-            position:fixed;
+            position: fixed;
             z-index: 3;
             width: 81px;
-            height:81px;
+            height: 81px;
             background-color: black;
             background-size: cover;
             background-image: url(moon.png);
             animation: moon 4s steps(8) infinite;
-            display:none;
+            display: none;
         }
-       
-       
-         .burger {
-             position: absolute;
-             height:50px;
-             width:50px;
-             right: 30px;
-              top: 12px;
-             color: white;
-             font-size:50px;
-             display: none;
-         }
-      
-         footer {
-             height:50px;
-             background-color: black;
-             color:white;
-             text-align: center;
-             padding:16px 0;
-         }
-         main {
-             background-image: linear-gradient(to right, #eec, #fff);
-             display: flex;
-             flex-wrap: wrap;
-             align-items: center;
-      align-content: space-around;
-         padding:10px;
-             position: relative; 
-             padding: 5% 0;
-            
-         }
-      
-          .gallery img {
-      display: block;
-      width: 100%;
-              height:45vh;
-       
-    }
-         .gallery a {
-   width:26%;
-/*      padding: 10px;*/
-    flex-grow: 1;
-      justify-content: space-around;
-/*      box-shadow: 1px 1px 1px 1px grey;*/
-/*      margin: 1%;*/
-             
-         }
-         
-         @media (max-width:1024px){
-       
-              .one {
-           position:fixed;
-                z-index:3;}
-             
-             .burger {
-             display: block;
-                 z-index:4;
-         }
-             
-             .one nav a {
-                 width:100%;
-             }
-             .one nav a:nth-child(1)::before{
-                 display: none;}
-              .one nav a:nth-child(2)::after{
-                 display: none;}
-              .one nav a:nth-child(3)::before{
-                 display: none;}
-             .one nav a:nth-child(1):hover {
-                 background-color: rgba(110,110,110,.2);
-             }
-             .one nav a:nth-child(2):hover {
-                 background-color: rgba(110,110,110,.2);
-             }
-             .one nav a:nth-child(3):hover {
-                 background-color: rgba(110,110,110,.2);
-             }
-              .one nav a:nth-child(4):hover {
-                 background-color: rgba(110,110,110,.2);
-                  color:white;
-             }
-        .one nav {
-        flex-wrap: wrap;
-        flex-direction: column;
-        padding: 0;
-        padding-top: 80px;
-      }
-             
-    .one nav a:nth-child(4) {
-            border: none;
-            margin-right:0;
-        } 
-     .one nav a {
-        flex-basis: 100%;
-        padding:30px;
-      }
-             .one img {
-                 display: none;
-             }
-             .burger i {
-                 display: none;
-             }
-             .burger .active {
-                 display:block;
-             }
-             
-          .hidden {
-                display:none;
-             }
-            
-         }
-      
 
-         
-         @keyframes moon {   
+
+        .burger {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            right: 30px;
+            top: 12px;
+            color: white;
+            font-size: 50px;
+            display: none;
+        }
+
+        footer {
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        main {
+            background-image: linear-gradient(to right, #eec, #fff);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: space-around;
+            padding: 10px;
+            position: relative;
+            padding: 5% 0;
+
+        }
+
+        .gallery img {
+            display: block;
+            width: 100%;
+            height: 45vh;
+
+        }
+
+        .gallery a {
+            width: 26%;
+            /*      padding: 10px;*/
+            flex-grow: 1;
+            justify-content: space-around;
+            /*      box-shadow: 1px 1px 1px 1px grey;*/
+            /*      margin: 1%;*/
+        }
+
+        @media (max-width:1024px) {
+
+            .one {
+                position: fixed;
+                z-index: 3;
+            }
+
+            .burger {
+                display: block;
+                z-index: 4;
+            }
+
+            .one nav a {
+                width: 100%;
+            }
+            .one nav a:nth-child(1)::before {
+                display: none;
+            }
+            .one nav a:nth-child(2)::after {
+                display: none;
+            }
+            .one nav a:nth-child(3)::before {
+                display: none;
+            }
+            .one nav a:nth-child(1):hover {
+                background-color: rgba(110, 110, 110, .2);
+            }
+            .one nav a:nth-child(2):hover {
+                background-color: rgba(110, 110, 110, .2);
+            }
+            .one nav a:nth-child(3):hover {
+                background-color: rgba(110, 110, 110, .2);
+            }
+            .one nav a:nth-child(4):hover {
+                background-color: rgba(110, 110, 110, .2);
+                color: white;
+            }
+            .one nav {
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 0;
+                padding-top: 80px;
+            }
+
+            .one nav a:nth-child(4) {
+                border: none;
+                margin-right: 0;
+            }
+            .one nav a {
+                flex-basis: 100%;
+                padding: 30px;
+            }
+            .one img {
+                display: none;
+            }
+            .burger i {
+                display: none;
+            }
+            .burger .active {
+                display: block;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+        }
+
+
+
+        @keyframes moon {
             100% {
                 background-position: -648px 0;
-             }}
-            
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
-       <section class="one"><div class="burger">
-       <i class="fa fa-bars active" aria-hidden="true"></i>
-       <i class="fa fa-times" aria-hidden="true"></i></div>
-   <img src="logo.png" alt="">
-   <div class="moon"></div>
-    <nav class="hidden">
-    <a href="index2.html">O agencji</a>
-    <a href="index2.html">Co nas wyróżnia</a>
-    <a href="index2.html">Kontakt</a>
-    <a href="portfolio.html">Portfolio</a>
-    </nav>
+    <section class="one">
+        <div class="burger">
+            <i class="fa fa-bars active" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true"></i></div>
+        <img src="../zaliczenie/logo.png" alt="">
+        <div class="moon"></div>
+        <nav class="hidden">
+            <a href="../martadera.github.io/index.html">O agencji</a>
+            <a href="..//martadera.github.io/index.html">Co nas wyróżnia</a>
+            <a href="..//martadera.github.io/index.html">Kontakt</a>
+            <a href="..//martadera.github.io/portfolio.html">Portfolio</a>
+        </nav>
     </section>
     <main class="gallery">
-        <a href="grafika1.jpg" data-lightbox="portfolio"><img src="grafika1.jpg"></a>
+        <a href="../zaliczenie/grafika1.jpg" data-lightbox="portfolio"><img src="../zaliczenie/grafika1.jpg"></a>
 
-    <a href="grafika2.jpg" data-lightbox="portfolio"><img src="grafika2.jpg"></a>
+        <a href="../zaliczenie/grafika2.jpg" data-lightbox="portfolio"><img src="../zaliczenie/grafika2.jpg"></a>
 
-    <a href="grafika3.jpg" data-lightbox="portfolio"><img src="grafika3.jpg" data-lightbox="portfolio"></a>
-    <a href="grafika4.jpg" data-lightbox="portfolio"><img src="grafika4.jpg"></a>
-    <a href="grafika5.jpg" data-lightbox="portfolio"><img src="grafika5.jpg"></a>
-    <a href="grafika6.jpg" data-lightbox="portfolio"><img src="grafika6.jpg"></a>
-    <a href="grafika7.jpg" data-lightbox="portfolio"><img src="grafika7.jpg"></a>
-    <a href="grafika8.jpg" data-lightbox="portfolio"><img src="grafika8.jpg"></a>
+        <a href="../zaliczenie/grafika3.jpg" data-lightbox="portfolio"><img src="..//zaliczenie/grafika3.jpg" data-lightbox="portfolio"></a>
+        <a href="../zaliczenie/grafika4.jpg" data-lightbox="portfolio"><img src="..//zaliczenie/grafika4.jpg"></a>
+        <a href="../zaliczenie/grafika5.jpg" data-lightbox="portfolio"><img src="..//zaliczenie/grafika5.jpg"></a>
+        <a href="../zaliczenie/grafika6.jpg" data-lightbox="portfolio"><img src="..//zaliczenie/grafika6.jpg"></a>
+        <a href="../zaliczenie/grafika7.jpg" data-lightbox="portfolio"><img src="..//zaliczenie/grafika7.jpg"></a>
+        <a href="../zaliczenie/grafika8.jpg" data-lightbox="portfolio"><img src="../zaliczenie/grafika8.jpg"></a>
     </main>
-    
-<footer>&copy;MoonAgency.</footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        
+
+    <footer>&copy;MoonAgency.</footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <script src="lightbox.js"></script>
     <script>
-        
-        
-       var div = document.querySelector("div.animacja");
-        
-          
-            window.addEventListener("scroll", function(){
-               
-                if (window.scrollY - 100 > div.offsetTop - window.innerHeight) {
-                    div.classList.add("opacity");
-                    
-                  
-                }
-                if (div.offsetTop + 0.5*window.innerHeight <window.scrollY){
-                      div.classList.remove("opacity");
-                }
-                if (div.offsetTop - window.innerHeight> window.scrollY){
-                     div.classList.remove("opacity");
-                }
-          
-            })
-        
+        var div = document.querySelector("div.animacja");
+
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY - 100 > div.offsetTop - window.innerHeight) {
+                div.classList.add("opacity");
+
+
+            }
+            if (div.offsetTop + 0.5 * window.innerHeight < window.scrollY) {
+                div.classList.remove("opacity");
+            }
+            if (div.offsetTop - window.innerHeight > window.scrollY) {
+                div.classList.remove("opacity");
+            }
+
+        })
+
         var div2 = document.querySelector("div.animacja2");
-        
-           
-            window.addEventListener("scroll", function(){
 
-                if (window.scrollY - 100 > div2.offsetTop - window.innerHeight) {
-                    div2.classList.add("opacity");
-                    
-                }
-                 if (div2.offsetTop + 0.5*window.innerHeight <window.scrollY){
-                      div2.classList.remove("opacity");
-                }
-                if (div2.offsetTop - window.innerHeight> window.scrollY){
-                     div2.classList.remove("opacity");
-                }
-          
-            })
-          
-            
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY - 100 > div2.offsetTop - window.innerHeight) {
+                div2.classList.add("opacity");
+
+            }
+            if (div2.offsetTop + 0.5 * window.innerHeight < window.scrollY) {
+                div2.classList.remove("opacity");
+            }
+            if (div2.offsetTop - window.innerHeight > window.scrollY) {
+                div2.classList.remove("opacity");
+            }
+
+        })
+
+
         var div3 = document.querySelector("div.animacja3");
-        
-            
-        
-            window.addEventListener("scroll", function(){
 
-                if (window.scrollY - 100 > div3.offsetTop - window.innerHeight) {
-                    div3.classList.add("opacity");
-                    
-                }
-                 if (div3.offsetTop + 0.5*window.innerHeight <window.scrollY){
-                      div3.classList.remove("opacity");
-                }
-                if (div3.offsetTop - window.innerHeight> window.scrollY){
-                     div3.classList.remove("opacity");
-                }
-                    
-                });
+
+
+        window.addEventListener("scroll", function() {
+
+            if (window.scrollY - 100 > div3.offsetTop - window.innerHeight) {
+                div3.classList.add("opacity");
+
+            }
+            if (div3.offsetTop + 0.5 * window.innerHeight < window.scrollY) {
+                div3.classList.remove("opacity");
+            }
+            if (div3.offsetTop - window.innerHeight > window.scrollY) {
+                div3.classList.remove("opacity");
+            }
+
+        });
         var flow1 = document.querySelector(".left");
-        
-window.addEventListener("scroll", function(){
-                if (window.scrollY - 100 > flow1.offsetTop - window.innerHeight) {
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY - 100 > flow1.offsetTop - window.innerHeight) {
                 flow1.classList.add("flow1");
-            
-                }
- if (flow1.offsetTop + 0.5*window.innerHeight <window.scrollY){
-                      flow1.classList.remove("flow1");
-                }
-                if (flow1.offsetTop - window.innerHeight> window.scrollY){
-                     flow1.classList.remove("flow1");
-                }});
-        
-      var flow2 = document.querySelector(".right");
-        
-window.addEventListener("scroll", function(){
-                if (window.scrollY - 100 > flow2.offsetTop - window.innerHeight) {
+
+            }
+            if (flow1.offsetTop + 0.5 * window.innerHeight < window.scrollY) {
+                flow1.classList.remove("flow1");
+            }
+            if (flow1.offsetTop - window.innerHeight > window.scrollY) {
+                flow1.classList.remove("flow1");
+            }
+        });
+
+        var flow2 = document.querySelector(".right");
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY - 100 > flow2.offsetTop - window.innerHeight) {
                 flow2.classList.add("flow2");
-                   
-        
-                }
-if (flow2.offsetTop + 0.5*window.innerHeight <window.scrollY){
-                      flow2.classList.remove("flow2");
-                }
-                if (flow2.offsetTop - window.innerHeight> window.scrollY){
-                     flow2.classList.remove("flow2");
-                }});
+
+
+            }
+            if (flow2.offsetTop + 0.5 * window.innerHeight < window.scrollY) {
+                flow2.classList.remove("flow2");
+            }
+            if (flow2.offsetTop - window.innerHeight > window.scrollY) {
+                flow2.classList.remove("flow2");
+            }
+        });
         var faBars = document.querySelector(".fa-bars");
         var faTimes = document.querySelector(".fa-times");
         var menu = document.querySelector(".one nav")
-        faBars.addEventListener("click", function(){
+        faBars.addEventListener("click", function() {
             faBars.classList.toggle("active");
             menu.classList.toggle("hidden");
-              faTimes.classList.toggle("active");
-            
-           
+            faTimes.classList.toggle("active");
+
+
         })
-         faTimes.addEventListener("click", function(){
+        faTimes.addEventListener("click", function() {
             faBars.classList.toggle("active");
             faTimes.classList.toggle("active");
-             menu.classList.toggle("hidden");
-          
+            menu.classList.toggle("hidden");
+
         })
-        
+
         var nav1 = document.querySelector(".one nav a:nth-child(1)");
         var two = document.querySelector(".two");
         var nav = document.querySelector("nav")
-        nav1.addEventListener("click", function(){
+        nav1.addEventListener("click", function() {
             $("body, html").animate({
-                scrollTop: two.offsetTop - 81},500);
+                scrollTop: two.offsetTop - 81
+            }, 500);
             nav.classList.toggle("hidden");
             faBars.classList.toggle("active");
-              faTimes.classList.toggle("active");
-            
-            });
-            
-          var nav2 = document.querySelector(".one nav a:nth-child(2)");
+            faTimes.classList.toggle("active");
+
+        });
+
+        var nav2 = document.querySelector(".one nav a:nth-child(2)");
         var three = document.querySelector(".three");
-        nav2.addEventListener("click", function(){
+        nav2.addEventListener("click", function() {
             $("body, html").animate({
-                scrollTop: three.offsetTop - 81},500);
+                scrollTop: three.offsetTop - 81
+            }, 500);
             nav.classList.toggle("hidden");
-             faBars.classList.toggle("active");
-              faTimes.classList.toggle("active");
-            });
-        
-         var nav3 = document.querySelector(".one nav a:nth-child(3)");
+            faBars.classList.toggle("active");
+            faTimes.classList.toggle("active");
+        });
+
+        var nav3 = document.querySelector(".one nav a:nth-child(3)");
         var kontakt = document.querySelector(".map");
-        nav3.addEventListener("click", function(){
+        nav3.addEventListener("click", function() {
             $("body, html").animate({
-                scrollTop: kontakt.offsetTop - 81},500);
+                scrollTop: kontakt.offsetTop - 81
+            }, 500);
             nav.classList.toggle("hidden");
-             faBars.classList.toggle("active");
-              faTimes.classList.toggle("active");
-           
-            });
-//        
-   
-       
-     
-    
+            faBars.classList.toggle("active");
+            faTimes.classList.toggle("active");
+
+        });
+        //
+
     </script>
 </body>
+
 </html>
